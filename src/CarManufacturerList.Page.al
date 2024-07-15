@@ -11,10 +11,10 @@ page 78910 "Car Manufacturer List"
         {
             repeater(Group)
             {
-                field("Manufacturer Code"; "Manufacturer Code")
+                field("Manufacturer Code"; Rec."Manufacturer Code")
                 {
                 }
-                field("Manufacturer Name"; "Manufacturer Name")
+                field("Manufacturer Name"; Rec."Manufacturer Name")
                 {
                 }
             }

@@ -10,13 +10,13 @@ page 78911 "Car Model List"
         {
             repeater(Group)
             {
-                field("Model Code"; "Model Code")
+                field("Model Code"; Rec."Model Code")
                 {
                 }
-                field("Manufacturer Code"; "Manufacturer Code")
+                field("Manufacturer Code"; Rec."Manufacturer Code")
                 {
                 }
-                field("Model Name"; "Model Name")
+                field("Model Name"; Rec."Model Name")
                 {
                 }
             }

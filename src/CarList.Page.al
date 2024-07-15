@@ -1,4 +1,4 @@
-page 78925 "Vehicle List"
+page 78926 "Car List"
 {
     PageType = List;
     SourceTable = "Car Register";
@@ -10,22 +10,25 @@ page 78925 "Vehicle List"
         {
             repeater(Group)
             {
-                field("Registration No."; "Registration No.")
+                field("VIN Code"; Rec."VIN Code")
                 {
                 }
-                field("Manufacturer"; "Manufacturer")
+                field("Registration No."; Rec."Registration No.")
                 {
                 }
-                field("Model"; "Model")
+                field("Manufacturer"; Rec."Manufacturer")
                 {
                 }
-                field("Year"; "Year")
+                field("Model"; Rec."Model")
                 {
                 }
-                field("Mileage"; "Mileage")
+                field("Year"; Rec."Year")
                 {
                 }
-                field("Category"; "Category")
+                field("Mileage"; Rec."Mileage")
+                {
+                }
+                field("Category"; Rec."Category")
                 {
                 }
             }

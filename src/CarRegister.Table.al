@@ -4,36 +4,39 @@ table 78900 "Car Register"
 
     fields
     {
-        field(1; "Registration No."; Code[20])
+        field(1; "VIN Code"; Code[20])
         {
             DataClassification = ToBeClassified;
         }
-        field(2; "Manufacturer"; Code[20])
+        field(2; "Registration No."; Code[20])
         {
             DataClassification = ToBeClassified;
         }
-        field(3; "Model"; Code[20])
+        field(3; "Manufacturer"; Code[20])
         {
             DataClassification = ToBeClassified;
         }
-        field(4; "Year"; Integer)
+        field(4; "Model"; Code[20])
         {
             DataClassification = ToBeClassified;
         }
-        field(5; "Mileage"; Integer)
+        field(5; "Year"; Integer)
         {
             DataClassification = ToBeClassified;
         }
-        field(6; "Category"; Option)
+        field(6; "Mileage"; Integer)
         {
-            OptionMembers = "Car,Motorcycle,Van";
+            DataClassification = ToBeClassified;
+        }
+        field(7; "Category"; Enum "Car Category")
+        {
             DataClassification = ToBeClassified;
         }
     }
 
     keys
     {
-        key(PK; "Registration No.")
+        key(PK; "VIN Code")
         {
             Clustered = true;
         }

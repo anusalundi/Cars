@@ -25,7 +25,8 @@
     "allowDownloadingSource": true,
     "includeSourceInSymbolFile": true
   },
-  "runtime": "10.0",
+  "runtime": "10.0", 
+  "target": "Cloud",
   "features": [
     "NoImplicitWith"
   ]

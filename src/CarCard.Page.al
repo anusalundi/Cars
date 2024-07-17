@@ -12,6 +12,7 @@ page 78920 "Car Card"
             {
                 field("VIN Code"; Rec."VIN Code")
                 {
+                    ApplicationArea = All;
                 }
                 field("Registration No."; Rec."Registration No.")
                 {
@@ -29,7 +30,7 @@ page 78920 "Car Card"
                     var
                         ManufacturerRec: Record "Car Manufacturer";
                     begin
-                        if Page.RunModal(Page::"Car Manufacturer List", ManufacturerRec) = Action::LookupOK then begin
+                        if PAGE.RunModal(PAGE::"Car Manufacturer List", ManufacturerRec) = ACTION::LookupOK then begin
                             Rec."Manufacturer" := ManufacturerRec."Manufacturer Code";
                             exit(true);
                         end;
@@ -42,7 +43,8 @@ page 78920 "Car Card"
                     var
                         ModelRec: Record "Car Model";
                     begin
-                        if Page.RunModal(Page::"Car Model List", ModelRec) = Action::LookupOK then begin
+                        ModelRec.SetRange("Manufacturer Code", Rec."Manufacturer");
+                        if PAGE.RunModal(PAGE::"Car Model List", ModelRec) = ACTION::LookupOK then begin
                             Rec."Model" := ModelRec."Model Code";
                             exit(true);
                         end;
@@ -51,12 +53,35 @@ page 78920 "Car Card"
                 }
                 field("Year"; Rec."Year")
                 {
+                    trigger OnValidate()
+                    begin
+                        if Rec."Year" > Date2DMY(Today, 3) then
+                            Error('Year cannot be greater than the current year.');
+                    end;
                 }
                 field("Mileage"; Rec."Mileage")
                 {
+                    trigger OnValidate()
+                    begin
+                        if Rec."Mileage" < 0 then
+                            Error('Mileage cannot be negative.');
+                    end;
                 }
                 field("Category"; Rec."Category")
                 {
+                }
+                field("Employee ID"; Rec."Employee ID") // Uus töötaja väli
+                {
+                    trigger OnLookup(var Text: Text): Boolean
+                    var
+                        EmployeeRec: Record Employee;
+                    begin
+                        if PAGE.RunModal(PAGE::"Employee List", EmployeeRec) = ACTION::LookupOK then begin
+                            Rec."Employee ID" := EmployeeRec."No.";
+                            exit(true);
+                        end;
+                        exit(false);
+                    end;
                 }
             }
         }

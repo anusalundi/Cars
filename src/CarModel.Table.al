@@ -13,6 +13,7 @@ table 78902 "Car Model"
         field(2; "Manufacturer Code"; Code[20])
         {
             DataClassification = ToBeClassified;
+            TableRelation = "Car Manufacturer"."Manufacturer Code";
         }
         field(3; "Model Name"; Text[50])
         {

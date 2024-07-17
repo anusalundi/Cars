@@ -3,6 +3,10 @@ page 78926 "Car List"
     PageType = List;
     SourceTable = "Car Register";
     ApplicationArea = All;
+    UsageCategory = Lists;
+    CardPageId = "Car Card";
+    ModifyAllowed = false;
+    Editable = false;
 
     layout
     {
@@ -31,6 +35,30 @@ page 78926 "Car List"
                 field("Category"; Rec."Category")
                 {
                 }
+                field("Employee ID"; Rec."Employee ID")
+                {
+                }
+            }
+        }
+    }
+
+    actions
+    {
+        area(processing)
+        {
+            action("Assign Employee")
+            {
+                Caption = 'Assign Employee';
+                ApplicationArea = All;
+                trigger OnAction()
+                var
+                    EmployeeRec: Record Employee;
+                begin
+                    if Page.RunModal(Page::"Employee List", EmployeeRec) = Action::LookupOK then begin
+                        Rec."Employee ID" := EmployeeRec."No.";
+                        Rec.Modify(true);
+                    end;
+                end;
             }
         }
     }

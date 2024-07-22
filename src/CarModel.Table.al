@@ -29,10 +29,10 @@ table 78902 "Car Model"
         }
     }
 
-    fieldgroups
-    {
-        fieldgroup(DropDown; "Model Code", "Model Name")
-        {
-        }
-    }
+    // fieldgroups
+    // {
+    //     fieldgroup(DropDown; "Model Code", "Model Name")
+    //     {
+    //     }
+    // }
 }

@@ -26,30 +26,30 @@ page 78920 "Car Card"
                 }
                 field("Manufacturer"; Rec."Manufacturer")
                 {
-                    trigger OnLookup(var Text: Text): Boolean
-                    var
-                        ManufacturerRec: Record "Car Manufacturer";
-                    begin
-                        if PAGE.RunModal(PAGE::"Car Manufacturer List", ManufacturerRec) = ACTION::LookupOK then begin
-                            Rec."Manufacturer" := ManufacturerRec."Manufacturer Code";
-                            exit(true);
-                        end;
-                        exit(false);
-                    end;
+                    // trigger OnLookup(var Text: Text): Boolean
+                    // var
+                    //     ManufacturerRec: Record "Car Manufacturer";
+                    // begin
+                    //     if PAGE.RunModal(PAGE::"Car Manufacturer List", ManufacturerRec) = ACTION::LookupOK then begin
+                    //         Rec."Manufacturer" := ManufacturerRec."Manufacturer Code";
+                    //         exit(true);
+                    //     end;
+                    //     exit(false);
+                    // end;
                 }
                 field("Model"; Rec."Model")
                 {
-                    trigger OnLookup(var Text: Text): Boolean
-                    var
-                        ModelRec: Record "Car Model";
-                    begin
-                        ModelRec.SetRange("Manufacturer Code", Rec."Manufacturer");
-                        if PAGE.RunModal(PAGE::"Car Model List", ModelRec) = ACTION::LookupOK then begin
-                            Rec."Model" := ModelRec."Model Code";
-                            exit(true);
-                        end;
-                        exit(false);
-                    end;
+                    // trigger OnLookup(var Text: Text): Boolean
+                    // var
+                    //     ModelRec: Record "Car Model";
+                    // begin
+                    //     ModelRec.SetRange("Manufacturer Code", Rec."Manufacturer");
+                    //     if PAGE.RunModal(PAGE::"Car Model List", ModelRec) = ACTION::LookupOK then begin
+                    //         Rec."Model" := ModelRec."Model Code";
+                    //         exit(true);
+                    //     end;
+                    //     exit(false);
+                    // end;
                 }
                 field("Year"; Rec."Year")
                 {
@@ -70,18 +70,18 @@ page 78920 "Car Card"
                 field("Category"; Rec."Category")
                 {
                 }
-                field("Employee ID"; Rec."Employee ID") // Uus töötaja väli
+                field("Employee ID"; Rec."Employee ID")
                 {
-                    trigger OnLookup(var Text: Text): Boolean
-                    var
-                        EmployeeRec: Record Employee;
-                    begin
-                        if PAGE.RunModal(PAGE::"Employee List", EmployeeRec) = ACTION::LookupOK then begin
-                            Rec."Employee ID" := EmployeeRec."No.";
-                            exit(true);
-                        end;
-                        exit(false);
-                    end;
+                    // trigger OnLookup(var Text: Text): Boolean
+                    // var
+                    //     EmployeeRec: Record Employee;
+                    // begin
+                    //     if PAGE.RunModal(PAGE::"Employee List", EmployeeRec) = ACTION::LookupOK then begin
+                    //         Rec."Employee ID" := EmployeeRec."No.";
+                    //         exit(true);
+                    //     end;
+                    //     exit(false);
+                    // end;
                 }
             }
         }

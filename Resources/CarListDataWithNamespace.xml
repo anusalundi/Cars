@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CarList xmlns="urn:schemas-microsoft-com:dynamics-nav:report">
+    <Car>
+        <VINCode/>
+        <RegistrationNo/>
+        <Manufacturer/>
+        <Model/>
+        <Year/>
+        <Mileage/>
+        <Category/>
+        <EmployeeID/>
+    </Car>
+</CarList>

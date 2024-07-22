@@ -60,6 +60,15 @@ page 78926 "Car List"
                     end;
                 end;
             }
+            action("Print PDF")
+            {
+                Caption = 'Print PDF';
+                ApplicationArea = All;
+                trigger OnAction()
+                begin
+                    REPORT.RUNMODAL(REPORT::"Car List Report", true, false);
+                end;
+            }
         }
     }
 }

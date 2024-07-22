@@ -16,19 +16,19 @@ page 78911 "Car Model List"
                 }
                 field("Manufacturer Code"; Rec."Manufacturer Code")
                 {
-                    trigger OnLookup(var Text: Text): Boolean
-                    var
-                        ManufacturerRec: Record "Car Manufacturer";
-                        ManufacturerLookup: Page "Car Manufacturer List";
-                    begin
-                        ManufacturerLookup.SetTableView(ManufacturerRec);
-                        if ManufacturerLookup.RunModal = Action::LookupOK then begin
-                            ManufacturerLookup.GetRecord(ManufacturerRec);
-                            Rec."Manufacturer Code" := ManufacturerRec."Manufacturer Code";
-                            exit(true);
-                        end;
-                        exit(false);
-                    end;
+                    // trigger OnLookup(var Text: Text): Boolean
+                    // var
+                    //     ManufacturerRec: Record "Car Manufacturer";
+                    //     ManufacturerLookup: Page "Car Manufacturer List";
+                    // begin
+                    //     ManufacturerLookup.SetTableView(ManufacturerRec);
+                    //     if ManufacturerLookup.RunModal = Action::LookupOK then begin
+                    //         ManufacturerLookup.GetRecord(ManufacturerRec);
+                    //         Rec."Manufacturer Code" := ManufacturerRec."Manufacturer Code";
+                    //         exit(true);
+                    //     end;
+                    //     exit(false);
+                    // end;
                 }
                 field("Model Name"; Rec."Model Name")
                 {

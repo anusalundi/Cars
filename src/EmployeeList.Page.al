@@ -2,9 +2,9 @@ pageextension 78909 EmployeeListExtension extends "Employee List"
 {
     layout
     {
-        addlast(content)
+        addafter("Last Name")
         {
-            field("Car Count"; CountEmployeeCars(Rec."No."))
+            field("Car Count"; Rec."Car Count")
             {
                 ApplicationArea = All;
                 trigger OnDrillDown()
@@ -19,12 +19,4 @@ pageextension 78909 EmployeeListExtension extends "Employee List"
             }
         }
     }
-
-    local procedure CountEmployeeCars(EmployeeID: Code[20]): Integer
-    var
-        CarRec: Record "Car Register";
-    begin
-        CarRec.SetRange("Employee ID", EmployeeID);
-        exit(CarRec.Count);
-    end;
 }
